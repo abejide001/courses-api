@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   const { error } = validateCourse(req.body);
   if (error) {
-    res.status(400).send('bad request');
+    res.status(400).send(error.details[0].message);
     return;
   }
   const course = {
@@ -50,7 +50,7 @@ router.put('/:id', (req, res) => {
   if (!course) res.status(404).send('course not found');
   const { error } = validateCourse(req.body);
   if (error) {
-    res.status(400).send('bad request');
+    res.status(400).send(error.details[0].message);
     return;
   }
   course.name = req.body.name;
