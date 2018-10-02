@@ -14,7 +14,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "config": "^2.0.1",
     "debug": "^3.1.0",
     "express": "^4.16.3",
     "joi": "^13.6.0",
